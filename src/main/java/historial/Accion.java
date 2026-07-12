@@ -29,4 +29,9 @@ public class Accion {
         return textoNuevo;
     }
 
+    @Override
+    public String toString() {
+        return tipo + " | Línea: " + posicion;
+    }
+
 }

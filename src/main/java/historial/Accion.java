@@ -1,13 +1,32 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package historial;
-
-/**
- *
- * @author Lenovo
- */
 public class Accion {
-    
+
+    private TipoAccion tipo;
+    private int posicion;
+    private String textoAnterior;
+    private String textoNuevo;
+
+    public Accion(TipoAccion tipo, int posicion, String textoAnterior, String textoNuevo) {
+        this.tipo = tipo;
+        this.posicion = posicion;
+        this.textoAnterior = textoAnterior;
+        this.textoNuevo = textoNuevo;
+    }
+
+    public TipoAccion getTipo() {
+        return tipo;
+    }
+
+    public int getPosicion() {
+        return posicion;
+    }
+
+    public String getTextoAnterior() {
+        return textoAnterior;
+    }
+
+    public String getTextoNuevo() {
+        return textoNuevo;
+    }
+
 }

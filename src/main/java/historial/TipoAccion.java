@@ -1,4 +1,6 @@
 package historial;
-public class TipoAccion {
-    
+public enum TipoAccion {
+    INSERTAR,
+    EDITAR,
+    ELIMINAR
 }

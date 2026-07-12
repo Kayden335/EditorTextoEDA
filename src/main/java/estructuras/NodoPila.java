@@ -5,11 +5,13 @@ public class NodoPila {
     private Object dato;
     private NodoPila siguiente;
 
+    // Constructor
     public NodoPila(Object dato) {
         this.dato = dato;
         this.siguiente = null;
     }
 
+    // Getters y Setters
     public Object getDato() {
         return dato;
     }

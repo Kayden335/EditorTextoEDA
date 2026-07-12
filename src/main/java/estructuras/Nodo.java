@@ -6,12 +6,14 @@ public class Nodo {
     private Nodo siguiente;
     private Nodo anterior;
 
+    // Constructor
     public Nodo(String texto) {
         this.texto = texto;
         this.siguiente = null;
         this.anterior = null;
     }
 
+    // Getters y Setters
     public String getTexto() {
         return texto;
     }
@@ -35,5 +37,4 @@ public class Nodo {
     public void setAnterior(Nodo anterior) {
         this.anterior = anterior;
     }
-
 }

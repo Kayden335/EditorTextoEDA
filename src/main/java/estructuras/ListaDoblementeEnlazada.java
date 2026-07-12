@@ -39,7 +39,7 @@ public class ListaDoblementeEnlazada {
     // Inserta una línea en una posición
     public void insertar(int posicion, String texto) {
         if (posicion < 1 || posicion > tamaño + 1) {
-            System.out.println("Posición inválida.");
+            System.out.println("Posicion invalida.");
             return;
         }
         if (posicion == tamaño + 1) {
@@ -82,7 +82,7 @@ public class ListaDoblementeEnlazada {
         if (actual != null) {
             actual.setTexto(nuevoTexto);
         } else {
-            System.out.println("Posición inválida.");
+            System.out.println("Posicion invalida.");
         }
     }
 
@@ -90,7 +90,7 @@ public class ListaDoblementeEnlazada {
     public void eliminar(int posicion) {
         Nodo actual = buscarNodo(posicion);
         if (actual == null) {
-            System.out.println("Posición inválida.");
+            System.out.println("Posicion invalida.");
             return;
         }
         // Solo existe un nodo
@@ -128,7 +128,7 @@ public class ListaDoblementeEnlazada {
     // Muestra todo el documento
     public void mostrar() {
         if (estaVacia()) {
-            System.out.println("El documento está vacío.");
+            System.out.println("El documento esta vacio.");
             return;
         }
         Nodo actual = primero;

@@ -33,7 +33,7 @@ public class EditorTexto {
     public void editarLinea(int posicion, String nuevoTexto) {
         String textoAnterior = documento.obtenerTexto(posicion);
         if (textoAnterior == null) {
-            System.out.println("La línea no existe.");
+            System.out.println("La linea no existe.");
             return;
         }
 
@@ -52,7 +52,7 @@ public class EditorTexto {
     public void eliminarLinea(int posicion) {
         String texto = documento.obtenerTexto(posicion);
         if (texto == null) {
-            System.out.println("La línea no existe.");
+            System.out.println("La linea no existe.");
             return;
         }
         documento.eliminar(posicion);

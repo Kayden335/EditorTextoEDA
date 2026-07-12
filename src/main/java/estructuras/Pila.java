@@ -57,7 +57,7 @@ public class Pila {
     // Muestra el contenido de la pila
     public void mostrar() {
         if (estaVacia()) {
-            System.out.println("La pila está vacía.");
+            System.out.println("La pila esta vacia.");
             return;
         }
         NodoPila actual = cima;

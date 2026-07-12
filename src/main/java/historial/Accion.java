@@ -31,7 +31,7 @@ public class Accion {
 
     @Override
     public String toString() {
-        return tipo + " | Línea: " + posicion;
+        return tipo + " | Linea: " + posicion;
     }
 
 }

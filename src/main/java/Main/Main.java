@@ -1,57 +1,73 @@
 package Main;
-import estructuras.ListaDoblementeEnlazada;
-import estructuras.Pila;
+import editor.EditorTexto;
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-        
-        ListaDoblementeEnlazada documento = new ListaDoblementeEnlazada();
-        documento.insertarFinal("Hola");
-        documento.insertarFinal("Bienvenidos");
-        documento.insertarFinal("Proyecto EDA");
-        documento.insertarFinal("Editor de Texto");
-        documento.mostrar();
-        // Edita el texto de una línea
-        System.out.println();
-        documento.editar(2, "Estructuras de Datos");
-        System.out.println("Despues de editar:");
-        documento.mostrar();
-        //Eliminar un nodo 
-        System.out.println();
-        documento.eliminar(3);
-        System.out.println("Despues de eliminar:");
-        documento.mostrar();
-        // Devuelve el texto de una línea
-        System.out.println();
-        String texto = documento.obtenerTexto(2);
-        System.out.println("Texto de la linea 2:");
-        System.out.println(texto);
-        //Implementacion pila
-        Pila pila = new Pila();
-        System.out.println();
-        System.out.println("¿La pila esta vacia?: " + pila.estaVacia());
-        System.out.println("Tamano de la pila: " + pila.getTamaño());
-        //poner algo a la pila en la cima
-        pila.push("Insertar");
-        pila.push("Editar");
-        pila.push("Eliminar");
-
-        System.out.println();
-        System.out.println("Elementos en la pila: " + pila.getTamaño());
-        //Elemento en la cima
-        System.out.println();
-        System.out.println("Elemento en la cima:");
-        System.out.println(pila.peek());
-        
-        //Eliminar y mostrar
-        System.out.println();
-        System.out.println("Elemento eliminado:");
-        System.out.println(pila.pop());
-        System.out.println();
-        System.out.println("Nueva cima:");
-        System.out.println(pila.peek());
-        System.out.println();
-        System.out.println("Cantidad:");
-        System.out.println(pila.getTamaño());
+        Scanner teclado = new Scanner(System.in);
+        EditorTexto editor = new EditorTexto();
+        int opcion;
+        do {
+            System.out.println("\n---------------------------------");
+            System.out.println("      EDITOR DE TEXTO ");
+            System.out.println("---------------------------------");
+            System.out.println("1. Mostrar documento");
+            System.out.println("2. Insertar linea");
+            System.out.println("3. Editar linea");
+            System.out.println("4. Eliminar linea");
+            System.out.println("5. Deshacer (Undo)");
+            System.out.println("6. Rehacer (Redo)");
+            System.out.println("7. Mostrar pila Undo");
+            System.out.println("8. Mostrar pila Redo");
+            System.out.println("9. Salir");
+            System.out.print("Seleccione una opcion: ");
+            opcion = teclado.nextInt();
+            teclado.nextLine();
+            switch (opcion) {
+                case 1:
+                    editor.mostrarDocumento();
+                    break;
+                case 2:
+                    System.out.print("Posicion: ");
+                    int posInsertar = teclado.nextInt();
+                    teclado.nextLine();
+                    System.out.print("Texto: ");
+                    String texto = teclado.nextLine();
+                    editor.insertarLinea(posInsertar, texto);
+                    break;
+                case 3:
+                    System.out.print("Posicion: ");
+                    int posEditar = teclado.nextInt();
+                    teclado.nextLine();
+                    System.out.print("Nuevo texto: ");
+                    String nuevoTexto = teclado.nextLine();
+                    editor.editarLinea(posEditar, nuevoTexto);
+                    break;
+                case 4:
+                    System.out.print("Posicion: ");
+                    int posEliminar = teclado.nextInt();
+                    editor.eliminarLinea(posEliminar);
+                    break;
+                case 5:
+                    editor.deshacer();
+                    break;
+                case 6:
+                    editor.rehacer();
+                    break;
+                case 7:
+                    editor.mostrarUndo();
+                    break;
+                case 8:
+                    editor.mostrarRedo();
+                    break;
+                case 9:
+                    System.out.println("\nPrograma finalizado.");
+                    break;
+                default:
+                    System.out.println("\nOpcion invalida.");
+            }
+        } while (opcion != 9);
+        teclado.close();
     }
 }

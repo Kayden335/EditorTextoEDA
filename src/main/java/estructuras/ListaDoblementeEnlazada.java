@@ -38,10 +38,15 @@ public class ListaDoblementeEnlazada {
 
     // Inserta una línea en una posición
     public void insertar(int posicion, String texto) {
-        if (posicion < 1 || posicion > tamaño + 1) {
+        if (posicion < 1) {
             System.out.println("Posicion invalida.");
             return;
         }
+        
+        while(posicion > tamaño - 1){
+            insertarFinal("");
+        }
+        
         if (posicion == tamaño + 1) {
             insertarFinal(texto);
             return;

@@ -3,6 +3,9 @@ import estructuras.ListaDoblementeEnlazada;
 import estructuras.Pila;
 import historial.Accion;
 import historial.TipoAccion;
+import static historial.TipoAccion.EDITAR;
+import static historial.TipoAccion.ELIMINAR;
+import static historial.TipoAccion.INSERTAR;
 
 public class EditorTexto {
     private ListaDoblementeEnlazada documento;
